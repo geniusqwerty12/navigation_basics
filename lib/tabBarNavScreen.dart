@@ -4,7 +4,7 @@ import 'package:navigation_basics/screens/MessageScreen.dart';
 import 'package:navigation_basics/screens/ProfileScreen.dart';
 
 class TabBarNavScreen extends StatefulWidget {
-  TabBarNavScreen({Key key}) : super(key: key);
+  TabBarNavScreen({Key? key}) : super(key: key);
 
   @override
   _TabBarNavScreenState createState() => _TabBarNavScreenState();
@@ -12,11 +12,7 @@ class TabBarNavScreen extends StatefulWidget {
 
 class _TabBarNavScreenState extends State<TabBarNavScreen> {
   // List of tab screens
-  List<Widget> _tabScreens =[
-    HomeScreen(),
-    MessageScreen(),
-    ProfileScreen()
-  ];
+  List<Widget> _tabScreens = [HomeScreen(), MessageScreen(), ProfileScreen()];
 
   // List of tab items
   List<Widget> _tabItems = [
@@ -33,15 +29,15 @@ class _TabBarNavScreenState extends State<TabBarNavScreen> {
       // length of the tabs - must match the items and screens in terms of count
       length: _tabItems.length,
       child: Scaffold(
-         appBar: AppBar(
-           title: Text("Tab Bar Navigation Example"),
+        appBar: AppBar(
+          title: Text("Tab Bar Navigation Example"),
           //  Tab bar widget
-           bottom: TabBar(
-             // accepts a list of Tab widget
-             tabs: _tabItems,
-           ),
-         ),
-         //Tab bar view widget
+          bottom: TabBar(
+            // accepts a list of Tab widget
+            tabs: _tabItems,
+          ),
+        ),
+        //Tab bar view widget
         body: TabBarView(
           // accepts a list of widgets
           children: _tabScreens,
